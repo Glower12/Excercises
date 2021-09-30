@@ -1,0 +1,94 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+
+
+    public static void main(String[] args) {
+        System.out.println("It's a simple calculator");
+        //System.out.println("Choose an option \n1-Add\n2-Subtract\n3-Multiply\n4-Divide");
+
+        Scanner scann = new Scanner(System.in);
+        boolean finish = true;
+        do {
+
+            System.out.println("Choose an option \n1-Add\n2-Subtract\n3-Multiply\n4-Divide\n5-quit");
+
+            try {
+                int option = scann.nextInt();
+                if (option == 1)
+                    System.out.println(Add());
+
+                else if (option == 2)
+                    System.out.println(Subtract());
+
+                else if (option == 3)
+                    System.out.println(Multiply());
+
+                else if (option == 4)
+                    System.out.println(Divide());
+
+                else if(option == 5) {
+                    System.out.println("Thanks for using");
+                    finish = false;
+                }
+            } catch (Exception exception) {
+                System.out.println("Please try again ");
+                finish = false;
+            }
+        }
+        while(finish);
+
+
+    }
+
+    private static Integer Add(){
+
+        Scanner scann = new Scanner(System.in);
+        System.out.println("Enter first number");
+        int number1 = scann.nextInt();
+
+        System.out.println("Enter second number");
+        int number2 = scann.nextInt();
+
+        return number1 + number2;
+    }
+
+    private static Integer Subtract(){
+
+        Scanner scann = new Scanner(System.in);
+        System.out.println("Enter first number");
+        int number1 = scann.nextInt();
+
+        System.out.println("Enter second number");
+        int number2 = scann.nextInt();
+
+        return number1 - number2;
+    }
+
+    private static Integer Multiply(){
+
+        Scanner scann = new Scanner(System.in);
+        System.out.println("Enter first number");
+        int number1 = scann.nextInt();
+
+        System.out.println("Enter second number");
+        int number2 = scann.nextInt();
+
+        return number1 * number2;
+    }
+
+    private static String Divide(){
+
+        Scanner scann = new Scanner(System.in);
+        System.out.println("Enter first number");
+        double number1 = scann.nextInt();
+
+        System.out.println("Enter second number");
+        double number2 = scann.nextInt();
+
+        return String.format("%.2f", (number1/number2));
+    }
+}
