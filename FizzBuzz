@@ -1,0 +1,33 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        FizzBuzz();
+
+    }
+
+    public static  void FizzBuzz(){
+
+        System.out.println("Sprawdz liczby gdy podzielna przez \n3-Fizz \n5-Buzz\n5 i 3 FizzBuzz");
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Wpisz zakres licz ktore chcesz sprawdzic: ");
+
+        int z = scan.nextInt();
+
+        for(int i = 1 ; i < z ; i++ ){
+
+            if(i %3 ==0 && i %5 ==0)
+                System.out.println(i + " FizzBuzz");
+            else if(i %3 ==0)
+                System.out.println(i + " Fizz");
+            else if(i %5 ==0)
+                System.out.println(i +" Buzz");
+            else
+                System.out.println(i);
+        }
+    }
+
+}
